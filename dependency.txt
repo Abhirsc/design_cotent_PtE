@@ -1,0 +1,53 @@
+Project: Daily Reflection Studio
+Last updated: 2026-03-28
+
+Tech stack
+- Python 3.11+
+- Streamlit UI
+- OpenAI Python SDK using Responses API
+- Pydantic for schemas
+- pandas for CSV export and table handling
+- python-dotenv for environment variables
+
+Dependencies and versions
+- openai>=1.68.2
+- streamlit>=1.43.0
+- pydantic>=2.10.6
+- pandas>=2.2.3
+- python-dotenv>=1.0.1
+
+Environment variables
+- OPENAI_API_KEY
+- OPENAI_MODEL
+
+Current local status
+- `OPENAI_API_KEY` has been added locally.
+- App run command:
+  `.venv/bin/streamlit run streamlit_app.py --server.headless true --server.port 8501`
+- App now includes a `Local Demo` engine that does not require any API provider.
+
+Files that depend on these packages
+- `streamlit_app.py`: Streamlit UI, pandas display
+- `core/generator.py`: OpenAI SDK, dotenv
+- `core/schemas.py`: Pydantic
+- `core/exporters.py`: pandas
+
+Known bugs / limitations
+- README currently describes the layout instead of including a real screenshot image.
+- The app generates structured content and visual directions, but it does not yet create real layered images.
+- Instagram direct publishing is not implemented yet.
+- Duplicate checking uses text similarity, not semantic similarity.
+- OpenAI generation still depends on API quota and billing; the new `Local Demo` mode is for testing, not production-quality AI writing.
+
+Tests / checks to run
+- `python -m compileall .`
+- `streamlit run streamlit_app.py`
+- Generate a sample batch and confirm:
+  - history saves to `data/history.json`
+  - JSON export works
+  - CSV export works
+  - Markdown export works
+  - quality check tab shows duplicate warnings when expected
+
+Checks completed in this session
+- `python3 -m compileall .` passed on 2026-03-26

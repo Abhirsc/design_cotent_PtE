@@ -1,0 +1,5 @@
+openai>=1.68.2
+streamlit>=1.43.0
+pydantic>=2.10.6
+pandas>=2.2.3
+python-dotenv>=1.0.1

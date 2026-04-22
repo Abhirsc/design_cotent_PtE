@@ -1,0 +1,66 @@
+Project: Daily Reflection Studio
+Date started: 2026-03-26
+Last updated: 2026-03-28
+
+Purpose
+- Build a local Python Streamlit app for generating reflective social media content for the @path_to_enliten concept.
+- Focus on universal awareness, simplicity, clarity, contemplation, and premium presentation.
+
+Work completed
+- Scaffolded a new Streamlit project from an empty workspace.
+- Added a modular file structure with `core/` for prompts, generator, exporters, schemas, and utilities.
+- Implemented content generation using the OpenAI Responses API with structured Pydantic parsing.
+- Added sidebar controls for theme, platform, tone, template, count, weekly plan mode, and manual top-layer text.
+- Added main output cards that show generated quote, caption, CTA, hashtags, SEO keywords, visual direction, and layer plan.
+- Added export buttons for JSON, CSV, and Markdown.
+- Added local history storage and a history viewer.
+- Added duplicate similarity warnings in a quality checks tab.
+- Added 24-hour cleanup for saved batch files in `outputs/`.
+- Added project learning and dependency tracking files.
+- Verified the project with `python3 -m compileall .`.
+- Fixed the duplicate warning flow so new entries are compared against previous history instead of themselves.
+- Added friendly API key error handling so the UI still opens even if `.env` is not configured yet.
+- Confirmed the app can be run locally with Streamlit after dependency setup.
+- Recorded that the OpenAI API key has now been added to local environment configuration.
+- Improved sidebar placeholder/input contrast for readability.
+- Added a soul leader influence filter so users can guide outputs by selected influence qualities.
+- Added a `Local Demo` engine so the app remains usable without OpenAI quota.
+- Added friendly handling for OpenAI quota errors with a clear switch path to offline demo generation.
+
+Process steps followed
+1. Checked the workspace and confirmed it was empty.
+2. Reviewed the current OpenAI documentation pattern requirement and used the current Responses API SDK style.
+3. Designed the app structure and data model first.
+4. Implemented the generator and typed schemas.
+5. Built the Streamlit interface and local storage flow.
+6. Added documentation and project tracking files.
+7. Ran a syntax verification pass and cleaned temporary cache artifacts.
+8. Updated the app to support offline testing when the API account is quota-limited.
+
+Current features
+- Generate up to 5 content options at once
+- Weekly plan toggle
+- 5 phrase options per post
+- 5 SEO suggestions per post
+- 5 visual/image directions per post
+- Manual overlay text field
+- Local history and duplicate check
+- JSON / CSV / Markdown export
+
+What is next
+- Add editable fields directly in the UI so users can refine a generated result before export.
+- Add optional image generation or layered composition preview support.
+- Add quote source influence controls or custom leader list upload.
+- Add stronger duplicate detection with semantic embeddings if needed.
+- Explore Instagram publishing through Meta APIs once account permissions are confirmed.
+- Test a full live generation now that the API key is configured.
+- Evaluate integration with non-OpenAI providers if the user wants production generation beyond demo mode.
+- Push current safe project state to GitHub repository `Abhirsc/design_cotent_PtE`.
+
+Repository safety notes
+- `.env`, `.venv`, `.codex`, `__pycache__`, generated output JSON, and local `data/history.json` are ignored.
+- `.env.example`, `data/.gitkeep`, and `outputs/.gitkeep` are tracked so the project structure remains clear.
+
+Open questions
+- Whether the user wants actual image generation inside the app or only visual direction and layered text planning.
+- Whether history should keep all posts forever or archive old ones after a chosen period.
